@@ -5,6 +5,7 @@ RUN /usr/bin/apt-get -yqq update \
         wget \
         xz-utils \
         xdg-utils \
+        xkb-data \
     && /usr/bin/wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | /usr/local/bin/python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()" \
     && /usr/bin/apt-get purge -yqq --auto-remove \
         wget \
