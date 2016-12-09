@@ -11,5 +11,6 @@ docker run --rm -ti \
        -e MY_NAME=$(/usr/bin/id -un) \
        -v ${HOME}:${HOME} \
        -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 \
+       -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
        <imagename>
 ```
