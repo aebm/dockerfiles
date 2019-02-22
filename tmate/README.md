@@ -15,7 +15,12 @@ docker build -t <IMAGE_NAME> .
 * Run container
 
 ```bash
-docker run --cap-add SYS_ADMIN  --rm -ti -v $(pwd)/keys:/keys:ro --network=host <IMAGE_NAME> tmate-slave -p <PORT>
+docker run \
+    -d \
+    --cap-add SYS_ADMIN \
+    -v $(pwd)/keys:/keys:ro \
+    --network=host <IMAGE_NAME> \
+    tmate-slave -p <PORT>
 ```
 
 * Configure your tmate client (don't forget to edit the fingerprints)
